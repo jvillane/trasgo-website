@@ -14,7 +14,7 @@ const menuItems: MenuItem[] = [
     href: '/muebles'
   }, {
     id: 'contacto',
-    nombre: 'Contáctanos',
+    nombre: 'Contacto',
     href: '/contacto'
   }
 ]
