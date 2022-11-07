@@ -1,0 +1,46 @@
+name: Trasgo Front Actions
+on:
+  push:
+    branches: [ master ]
+    paths-ignore:
+      - "README.md"
+  workflow_dispatch:
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    outputs:
+      AWS_S3_BUCKET_NAME: ${{ steps.setvars.outputs.AWS_S3_BUCKET_NAME }}
+      AWS_CLOUDFRONT_ID: ${{ steps.setvars.outputs.AWS_CLOUDFRONT_ID }}
+    steps:
+      - name: Cancel previous workflow
+        uses: styfle/cancel-workflow-action@0.4.0
+        with:
+          access_token: ${{ github.token }}
+      - name: Set branch environment variables
+        id: setvars
+        run: |
+          echo "::set-output name=AWS_S3_BUCKET_NAME::main-trasgo-cl"
+          echo "::set-output name=AWS_CLOUDFRONT_ID::EOMVOC7JKWC3H"
+  build:
+    runs-on: ubuntu-latest
+    needs: init
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: '14'
+      - name: Build
+        run: |
+          npm install
+          npm run build
+      - name: Copy ouput to s3
+        uses: prewk/s3-cp-action@v2
+        with:
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          source: './out'
+          dest: s3://main-panuozzo-cl
+          flags: --recursive
