@@ -44,7 +44,19 @@ const NavBar: React.FC = () => {
               </a>
             ))}
           </Popover.Group>
-          <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0"/>
+          <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
+            <a href="https://wa.me/56977215252" target="_blank" rel="noopener noreferrer"
+               className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-indigo-700">
+              <svg className="h-6 w-6" viewBox="0 0 24 24">
+                <path fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
+                      d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
+                      clipRule="evenodd"
+                />
+              </svg>
+              &nbsp;
+              Contáctanos
+            </a>
+          </div>
         </div>
         
         <Transition
@@ -82,7 +94,8 @@ const NavBar: React.FC = () => {
               <div className="py-6 px-5">
                 <div className="grid grid-cols-1 gap-4">
                   {menuItems.map(item => (
-                    <a href={item.href} key={item.id} className="text-base font-medium text-gray-900 hover:text-gray-700">
+                    <a href={item.href} key={item.id}
+                       className="text-base font-medium text-gray-900 hover:text-gray-700">
                       {item.nombre}
                     </a>
                   ))}
