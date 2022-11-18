@@ -83,7 +83,7 @@ const NavBar: React.FC = () => {
                   <div>
                     <img
                       className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/mark.svg?from-color=purple&from-shade=600&to-color=indigo&to-shade=600&toShade=600"
+                      src="https://tailwindui.com/img/logos/mark.svg?from-color=teal&from-shade=600&to-color=teal&to-shade=600&toShade=600"
                       alt="Your Company"
                     />
                   </div>
@@ -97,13 +97,26 @@ const NavBar: React.FC = () => {
                 </div>
               </div>
               <div className="py-6 px-5">
-                <div className="grid grid-cols-1 gap-4">
+                <div className="grid grid-cols-1 gap-y-4 gap-x-8">
                   {menuItems.map(item => (
                     <a href={item.href} key={item.id}
                        className="text-base font-medium text-gray-900 hover:text-gray-700">
                       {item.nombre}
                     </a>
                   ))}
+                </div>
+                <div className="mt-12 mb-4">
+                  <a href={`https://wa.me/${phone}`} target="_blank" rel="noopener noreferrer"
+                     className="flex w-full items-center justify-center rounded-md border border-transparent bg-teal-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-teal-700">
+                    <svg className="h-6 w-6" viewBox="0 0 24 24">
+                      <path fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
+                            d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 01-.923 1.785A5.969 5.969 0 006 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337z"
+                            clipRule="evenodd"
+                      />
+                    </svg>
+                    &nbsp;
+                    Contáctanos
+                  </a>
                 </div>
               </div>
             </div>
