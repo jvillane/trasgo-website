@@ -1,29 +1,32 @@
 import type { NextPage } from 'next'
-import NavBar from "../../components/NavBar";
-import Footer from "../../components/Footer";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 import Image from "next/image";
 import React from "react";
 
 const features = [
   {
     name: 'Pino',
-    description:
-      'The Drawstring Canister is water and tear resistant with durable canvas construction. This bag holds up to the demands of daily use while keeping your snacks secure.',
+    advantage: 'Abundante y fácil de trabajar',
+    density: '620',
+    description: 'Es una madera semiligera de coste bajo y se usa en muebles menos refinados. Hay multitud de variedades dentro del pino. Es muy destacable que sus vetas más pronunciadas y anchas alternan una veta dura con otra veta más blanda.',
     imageSrc: '/img/madera-pino.jpeg',
     imageAlt: 'Madera de pino',
   },
   {
     name: 'Roble',
-    description:
-      "Everything you need, nothing you don't. This bag has the simple, contemporary design that enables you to tell everyone you know about how essentialism is the only rational way to live life.",
+    advantage: 'Resistente',
+    density: '770',
+    description: 'Es una madera pesada, bastante dura y tiene vetas que hacen que presente mucha textura. Tiene un coste medio y se usa a menudo en muebles de tipo rústico o en los que se quiere destacar mucho la veta y la textura de la madera. Existen el roble americano y el roble europeo.',
     imageSrc: '/img/madera-roble.jpeg',
     imageAlt: 'Madera de roble',
   },
   {
     name: 'Cerezo',
-    description:
-      'Never lose your snacks again with our patent-pending snack stash pocket system. With dedicated pouches for each of your snacking needs, the Drawstring Canister unlocks new levels of efficiency and convenience.',
-    imageSrc: '/img/madera-cerezo.jpeg',
+    advantage: 'Color rojizo',
+    density: '620',
+    description: 'El cerezo es una madera semipesada y frondosa, destaca por su color rojizo y característico veteado. Es una madera muy decorativa y apreciada en el mundo del interiorismo. Es una madera de coste elevado, y se usa en muebles con diseño muy refinado. A su vez tenemos el cerezo americano y el cerezo europeo. Es muy adeacuada cuando se quieren conseguir acabados en muebles muy pulidos y sedosos.',
+    imageSrc: '/img/madera-cerezo.jpg',
     imageAlt: 'Madera de cerezo',
   },
 ]
@@ -64,8 +67,23 @@ const Home: NextPage = () => {
                     className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8"
                   >
                     <div className="mt-6 lg:col-span-5 lg:mt-0 xl:col-span-4">
-                      <h3 className="text-2xl font-medium text-amber-900">{feature.name}</h3>
-                      <p className="mt-2 text-md text-gray-500">{feature.description}</p>
+                      <h3 className="text-2xl font-medium text-amber-900 mb-6">{feature.name}</h3>
+                      <dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
+                        <div className="sm:col-span-1">
+                          <dt className="text-sm font-medium text-gray-500">Ventaja</dt>
+                          <dd className="mt-1 text-sm text-gray-900">{feature.advantage}</dd>
+                        </div>
+                        <div className="sm:col-span-1">
+                          <dt className="text-sm font-medium text-gray-500">Densidad</dt>
+                          <dd className="mt-1 text-sm text-gray-900">{feature.density} kg/m3</dd>
+                        </div>
+                        <div className="sm:col-span-2">
+                          <dt className="text-sm font-medium text-gray-500">Descripción</dt>
+                          <dd className="mt-1 text-sm text-gray-900">
+                            {feature.description}
+                          </dd>
+                        </div>
+                      </dl>
                     </div>
                     <div className="flex-auto lg:col-span-7 xl:col-span-8">
                       <div className="aspect-w-5 aspect-h-2 overflow-hidden rounded-lg bg-gray-100">
