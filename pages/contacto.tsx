@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline'
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import { phone } from "../config";
+import { email, phone } from "../config";
 
 const Home: NextPage = () => {
   return (
@@ -29,18 +29,22 @@ const Home: NextPage = () => {
                     </dd>
                   </div>
                   <div className="mt-6">
-                    <dt className="sr-only">Número de contacto</dt>
-                    <dd className="flex">
-                      <PhoneIcon className="h-6 w-6 flex-shrink-0 text-gray-400" aria-hidden="true"/>
-                      <span className="ml-3">+{phone}</span>
-                    </dd>
+                    <a href={`tel:+${phone}`}>
+                      <dt className="sr-only">Número de contacto</dt>
+                      <dd className="flex">
+                        <PhoneIcon className="h-6 w-6 flex-shrink-0 text-gray-400" aria-hidden="true"/>
+                        <span className="ml-3">+{phone}</span>
+                      </dd>
+                    </a>
                   </div>
                   <div className="mt-3">
-                    <dt className="sr-only">Email</dt>
-                    <dd className="flex">
-                      <EnvelopeIcon className="h-6 w-6 flex-shrink-0 text-gray-400" aria-hidden="true"/>
-                      <span className="ml-3">contacto@trasgo.cl</span>
-                    </dd>
+                    <a href={`mailto:${email}`}>
+                      <dt className="sr-only">Email</dt>
+                      <dd className="flex">
+                        <EnvelopeIcon className="h-6 w-6 flex-shrink-0 text-gray-400" aria-hidden="true"/>
+                        <span className="ml-3">{email}</span>
+                      </dd>
+                    </a>
                   </div>
                 </dl>
               </div>
