@@ -27,7 +27,7 @@ const Characteristics: React.FC = () => {
     <>
       <div className="relative bg-white py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-md px-4 text-center sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <p className="mt-2 text-3xl font-bold tracking-tight text-amber-900 sm:text-4xl">
             Muebles de calidad
           </p>
           <p className="mx-auto mt-5 max-w-prose text-xl text-gray-500">

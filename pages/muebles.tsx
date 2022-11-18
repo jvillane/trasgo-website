@@ -38,8 +38,8 @@ const Home: NextPage = () => {
           <div className="mx-auto max-w-7xl py-24 sm:py-32 sm:px-2 lg:px-4">
             <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
               <div className="max-w-3xl">
-                <h2 className="font-semibold text-gray-500">Materias primas de calidad</h2>
-                <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Nuestras maderas</p>
+                <h2 className="font-semibold text-amber-800">Materias primas de calidad</h2>
+                <p className="mt-2 text-3xl font-bold tracking-tight text-amber-600 sm:text-4xl">Nuestras maderas</p>
                 <p className="my-4 text-gray-500">
                   La construcción en madera presenta múltiples beneficios en términos medioambientales. Entre ellos destacan:
                 </p>
@@ -65,7 +65,7 @@ const Home: NextPage = () => {
                     className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8"
                   >
                     <div className="mt-6 lg:col-span-5 lg:mt-0 xl:col-span-4">
-                      <h3 className="text-2xl font-medium text-gray-900">{feature.name}</h3>
+                      <h3 className="text-2xl font-medium text-amber-900">{feature.name}</h3>
                       <p className="mt-2 text-md text-gray-500">{feature.description}</p>
                     </div>
                     <div className="flex-auto lg:col-span-7 xl:col-span-8">

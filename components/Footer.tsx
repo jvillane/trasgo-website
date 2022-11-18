@@ -1,9 +1,10 @@
 import React from "react";
+import { facebook, instagram, phone } from "../config";
 
 const social = [
   {
     name: 'Facebook',
-    href: '#',
+    href: `https://www.facebook.com/${facebook}`,
     icon: (props: any) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -16,7 +17,7 @@ const social = [
   },
   {
     name: 'Instagram',
-    href: '#',
+    href: `https://www.instagram.com/${instagram}`,
     icon: (props: any) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
@@ -29,7 +30,7 @@ const social = [
   },
   {
     name: 'WhatsApp',
-    href: '#',
+    href: `https://wa.me/${phone}`,
     icon: (props: any) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
@@ -37,7 +38,7 @@ const social = [
               clipRule="evenodd"
         />
       </svg>
-),
+    ),
   }
 ]
 
@@ -51,13 +52,14 @@ const Footer: React.FC = () => {
         <div className="mt-12 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between lg:mt-16">
           <div className="flex space-x-6 md:order-2">
             {social.map((item) => (
-              <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
+              <a key={item.name} href={item.href} className="text-teal-700 hover:text-gray-500" target="_blank"
+                 rel="noopener noreferrer">
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true"/>
               </a>
             ))}
           </div>
-          <p className="mt-8 text-base text-gray-400 md:order-1 md:mt-0">
+          <p className="mt-8 text-base text-teal-700 md:order-1 md:mt-0">
             &copy; 2023 Trasgo. Todos los derechos reservados.
           </p>
         </div>
