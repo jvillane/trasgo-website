@@ -1,4 +1,4 @@
-export const phone = "56977215151";
-export const instagram = "jvillane";
-export const facebook = "jvillane";
-export const email = "contacto@trasgo.cl";
+export const phone = "56934937811";
+export const instagram: string | undefined = undefined; //"trasgo.muebles";
+export const facebook: string | undefined = undefined; //"trasgo.muebles";
+export const email = "trasgo.muebles@gmail.com";

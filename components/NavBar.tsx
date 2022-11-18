@@ -12,15 +12,15 @@ const menuItems: MenuItem[] = [
   }, {
     id: 'muebles',
     nombre: 'Muebles',
-    href: '/muebles.html'
+    href: '/muebles'
   }, {
     id: 'materiales',
     nombre: 'Materiales',
-    href: '/materiales.html'
+    href: '/materiales'
   }, {
     id: 'contacto',
     nombre: 'Contacto',
-    href: '/contacto.html'
+    href: '/contacto'
   }
 ]
 
