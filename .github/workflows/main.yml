@@ -34,7 +34,7 @@ jobs:
           npm install
           npm run build
       - name: Publish website
-        uses: lbertenasco/s3-deploy@v1
+        uses: lbertenasco/s3-deploy@v1.2.4
         with:
           folder: out
           bucket: main-trasgo-cl
